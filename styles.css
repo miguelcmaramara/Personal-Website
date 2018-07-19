@@ -8,7 +8,9 @@
   --darkText: rgba(20,20,20,1);
   --hovDarkText: rgba(50,50,50,1);
   --about: rgba(198,45,53,1);
-  --works: rgba(223,189,84,1);
+  /* the old color yellow:
+  --works: rgba(223,189,84,1); */
+  --works: rgba(250,192,22,1);
   --resume: rgba(74,74,156,1);
   --readingList: rgba(50,165,38,1);
 }
@@ -210,7 +212,7 @@ CONTENT AND LANDING PAGE HERE
   Media Query begins here
 *********************************************************************************/
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 765px) {
   .container{
 
   }
@@ -220,7 +222,7 @@ CONTENT AND LANDING PAGE HERE
     background-color: var(--headingBackground);
     width:20%;
     height: 100%;
-    padding: 20px 30px 20px 30px;
+    padding: 35px 30px 35px 30px;
     z-index: 999;
     /* TODO: is this needed? vvvv */
     text-align: right;
@@ -242,15 +244,16 @@ CONTENT AND LANDING PAGE HERE
     top: 0px;
   }
 
+    .logo-container,  #nav-logo{
+      height: 75%;
+    }
+
   /* Remove button */
 
   .nav-toggle-label{
     display: none;
   }
 
-  .logo-container,  #nav-logo{
-    height: 100%;
-  }
 
   nav{
     /* TODO: Clean up text */
@@ -262,7 +265,7 @@ CONTENT AND LANDING PAGE HERE
     text-align: right;
     top: 0;
     left: 0;
-    font-size: 2em;
+    font-size: 1em;
     font-weight: 600;
     width: 100%;
     transform: rotateX(0deg);
@@ -315,5 +318,45 @@ CONTENT AND LANDING PAGE HERE
     left:20%;
     width: 80%;
     top: 0;
+  }
+}
+
+/********************************************************************************
+  Fine tuning Media Queries begin here
+*********************************************************************************/
+
+@media only screen and (min-width: 880px) {
+
+  /* Adjusts the font height, making it more fluid */
+  nav{
+    font-size: 1.25em;
+  }
+
+}
+
+@media only screen and (min-width: 985px) {
+
+  /* Adjusts the logo */
+  .logo-container,  #nav-logo{
+    height: 85%;
+  }
+
+  /* Adjusts the font height, making it more fluid */
+  nav{
+    font-size: 1.5em;
+  }
+
+}
+
+@media only screen and (min-width: 1210px) {
+
+  /* Adjusts the logo */
+  .logo-container,  #nav-logo{
+    height: 100%;
+  }
+
+  /* Adjusts the font height, making it more fluid */
+  nav{
+    font-size: 2em;
   }
 }
