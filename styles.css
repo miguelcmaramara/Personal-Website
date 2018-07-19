@@ -1,10 +1,16 @@
 /* STYLES.CSS*/
 
 :root{
-  --headingBackground: rgba(205, 0, 0, 0.5);
+  --headingBackground: rgba(255, 255, 255, 1);
   --transparent: rgba(0, 0, 0, 0);
-  --lightText: rgba(255,255,255,1);
+  --lightText: rgba(220,220,220,1);
   --hovLightText: rgba(210,210,210,1);
+  --darkText: rgba(0,0,0,1);
+  --hovDarkText: rgba(20,20,20,1);
+  --about: rgba(198,45,53,1);
+  --works: rgba(223,189,84,1);
+  --resume: rgba(74,74,156,1);
+  --readingList: rgba(50,165,38,1);
 }
 
 *,*::before,*::after{
@@ -14,6 +20,7 @@
 body{
   font-family: 'Raleway', sans-serif;
   margin: 0;
+  /* TODO: Check if this is needed */
   display: flex;
 }
 
@@ -92,22 +99,21 @@ header{
 }
 
 nav{
-  /* TODO: Clean up text */
-  /* background-color: var(--headingBackground); */
-  /* left: 0px; */
   position: absolute;
   text-align: left;
   top: 100%;
   left: 0;
   background: var(--headingBackground);
   width: 100%;
+  padding-bottom: 5px;
+  font-size: 1.25em;
 
-
-  /* display: none; */
+  /* This gives it the swinging out effect */
   transform-origin: top;
   transform: rotateX(-90deg);
   transition: transform 300ms ease-in-out;
 }
+
 nav ul{
   list-style: none;
   margin: 0px;
@@ -118,16 +124,16 @@ nav ul{
 }
 
 nav li{
-  line-height: 30px;
+  line-height: 40px;
 }
 
 nav a{
   text-decoration: none;
-  color: var(--lightText);
+  color: var(--darkText);
 }
 
 nav a:hover{
-  color: var(--hovLightText);
+  color: var(--hovDarkText);
 }
 
 #nav-toggle:checked ~ nav{
@@ -139,12 +145,136 @@ nav a:hover{
   opacity: 1;
 }
 
-/* CONTENT AND LANDING PAGE HERE */
+/*
+CONTENT AND LANDING PAGE HERE
+*/
 .landing-page{
   display: none;
 }
 
+/* FOLLOWING IS APPLICABLE IN BOTH MOBILE AND WEB */
+
 .content{
   position: absolute;
-  top: 90px;
+  top: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-content{
+  padding: 20px 40px;
+
+  /* TODO: see if these following styles are needed. is padding enough? */
+  /* display: grid;
+  grid-template-columns: 40px 1fr 40px; */
+}
+
+/* .text{
+  grid-column: 2/3;
+} */
+
+.about{
+  background-color: var(--about);
+  color: var(--lightText);
+}
+
+.works{
+  background-color: var(--works);
+  color: var(--darkText);
+}
+
+.resume{
+  background-color: var(--resume);
+  color: var(--lightText);
+}
+
+.reading-list{
+  background-color: var(--readingList);
+  color: var(--darkText);
+}
+
+.text h3{
+  font-size: 2em;
+}
+
+/*
+BEGIN CODE FOR DESKTOP ONLY
+*/
+
+@media only screen and (min-width: 768px) {
+  .container{
+
+  }
+  /* Reset the nav */
+  header{
+    position: fixed;
+    background-color: var(--headingBackground);
+    width:20%;
+    height: 100%;
+    padding: 10px 30px 10px 0px;
+    z-index: 999;
+    /* TODO: is this needed? vvvv */
+    text-align: right;
+  }
+
+  .navbar{
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    align-items: flex-end;
+  }
+
+  .nav-toggle-label{
+    display: none;
+  }
+
+  .logo-container,  #nav-logo{
+    height: 100%;
+  }
+
+  nav{
+    /* TODO: Clean up text */
+    /* background-color: var(--headingBackground); */
+    /* left: 0px; */
+    position: relative;
+    text-align: right;
+    top: 0;
+    left: 0;
+    background: var(--headingBackground);
+    width: 100%;
+    transform: rotateX(0deg);
+
+    /* display: none; */=
+  }
+
+  nav ul{
+    list-style: none;
+    margin: 0px;
+    left: 0px;
+    top: 0px;
+    opacity: 1;
+  }
+
+  nav li{
+    line-height: 30px;
+  }
+
+  nav a{
+    text-decoration: none;
+    color: var(--darkText);
+  }
+
+  nav a:hover{
+    color: var(--hovDarkText);
+  }
+
+
+  /* START OF CONTENT */
+
+  .content{
+    left:20%;
+    width: 80%;
+    top: 0;
+  }
 }
