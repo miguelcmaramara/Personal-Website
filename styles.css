@@ -1,0 +1,150 @@
+/* STYLES.CSS*/
+
+:root{
+  --headingBackground: rgba(205, 0, 0, 0.5);
+  --transparent: rgba(0, 0, 0, 0);
+  --lightText: rgba(255,255,255,1);
+  --hovLightText: rgba(210,210,210,1);
+}
+
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  display: flex;
+}
+
+/* NAVIGATION BAR STYLES */
+
+header{
+  position: fixed;
+  background-color: var(--headingBackground);
+  width:100%;
+  padding: 10px 30px 10px 0px;
+  z-index: 9999;
+
+  perspective: 300px;
+  perspective-origin: bottom;
+  /*TODO: Check this, are these two ready for removal?*/
+  /* height: 70px; */
+  text-align: left;
+  /* Do we need this^^ */
+}
+
+.navbar{
+  display: flex;
+  justify-content: flex-end;
+  height: 50px;
+  align-items: flex-end;
+}
+
+#nav-toggle{
+  display: none;
+}
+
+.nav-toggle-label{
+  position:absolute;
+  top: 20px;
+  left: 15px;
+  margin-left: 1em;
+  height: 30px;
+  /* TODO: Clean up */
+  /* display: flex; */
+  align-items: center;
+}
+
+.nav-toggle-label span{
+  top: 13px;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after
+{
+  display: block;
+  background: black;
+  height: 3px;
+  width: 1.75em;
+  border-radius: 3px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+  content: '';
+  position: absolute;
+  --dist: 10px;
+}
+
+.nav-toggle-label span::before{
+  bottom: var(--dist);
+}
+
+.nav-toggle-label span::after{
+  top: var(--dist);
+}
+
+.logo-container,  #nav-logo{
+  height: 100%;
+}
+
+nav{
+  /* TODO: Clean up text */
+  /* background-color: var(--headingBackground); */
+  /* left: 0px; */
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--headingBackground);
+  width: 100%;
+
+
+  /* display: none; */
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  transition: transform 300ms ease-in-out;
+}
+nav ul{
+  list-style: none;
+  margin: 0px;
+  left: 0px;
+  top: 0px;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out 300ms;
+}
+
+nav li{
+  line-height: 30px;
+}
+
+nav a{
+  text-decoration: none;
+  color: var(--lightText);
+}
+
+nav a:hover{
+  color: var(--hovLightText);
+}
+
+#nav-toggle:checked ~ nav{
+  transform: rotateX(0deg);
+  /* transform: scale(1, 1); */
+}
+
+#nav-toggle:checked ~ nav ul{
+  opacity: 1;
+}
+
+/* CONTENT AND LANDING PAGE HERE */
+.landing-page{
+  display: none;
+}
+
+.content{
+  position: absolute;
+  top: 90px;
+}
