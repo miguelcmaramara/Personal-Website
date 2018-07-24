@@ -222,6 +222,7 @@ CONTENT AND LANDING PAGE HERE
 
 .column{
   /* display: flex; */
+  text-align: left;
 }
 
 .column h2{
