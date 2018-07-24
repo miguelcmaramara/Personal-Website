@@ -163,7 +163,7 @@ CONTENT AND LANDING PAGE HERE
 .section-container{
   position: absolute;
   top: 70px;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
 }
@@ -201,7 +201,16 @@ CONTENT AND LANDING PAGE HERE
   color: var(--darkText);
 }
 
+
+.content-about{
+  grid-template-columns: 5px auto 5px;
+  grid-template-rows: auto auto auto;
+  grid-column-gap: 0px;
+}
+
 .instagram-container{
+  grid-column: 2/3;
+  grid-row: 2/3;
   display: flex;
   justify-content: center;
 }
@@ -212,15 +221,24 @@ CONTENT AND LANDING PAGE HERE
   /* line-height: 50px;*/
   margin: 0;
   text-align: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 
 .content p{
+
   font-size: 1.75em;
   margin: 20px 0px;
   line-height: 50px;
 }
 
+.instagram-media{
+  grid-column: 2/3;
+  /* height: 100%; */
+}
+
 .column{
+  grid-column: 2/3;
   /* display: flex; */
   text-align: left;
 }
@@ -267,7 +285,7 @@ CONTENT AND LANDING PAGE HERE
 
 
 /********************************************************************************
-  Media Queries begins here
+  Media Queries begins here for laptop
 *********************************************************************************/
 
 @media only screen and (min-width: 765px) {
