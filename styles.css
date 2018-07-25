@@ -445,6 +445,12 @@ CONTENT AND LANDING PAGE HERE
     grid-row: 1/2;
   }
 
+  .content p{
+
+    font-size: 1.75em;
+    margin: 20px 0px;
+    line-height: 50px;
+  }
     /* Instagram here */
   .instagram-container{
     grid-column: 9/-1;
