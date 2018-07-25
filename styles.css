@@ -26,6 +26,8 @@ body{
   display: flex;
 }
 
+
+
 /* NAVIGATION BAR STYLES */
 
 header{
@@ -48,6 +50,7 @@ header{
   justify-content: flex-end;
   height: 50px;
   align-items: flex-end;
+  /* width:100%; */
 }
 
 /* This concerns the activating checkbx and the label */
@@ -163,13 +166,14 @@ CONTENT AND LANDING PAGE HERE
 .section-container{
   position: absolute;
   top: 70px;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
+  /* overflow-x:hidden; */
 }
 
 .section{
-  padding: 20px 40px;
+  padding: 20px;
 
   /* TODO: see if these following styles are needed. is padding enough? */
   /* display: grid;
@@ -201,26 +205,44 @@ CONTENT AND LANDING PAGE HERE
   color: var(--darkText);
 }
 
+
+.content{
+  grid-template-columns: 5px auto 5px;
+  grid-template-rows: auto auto auto;
+  grid-column-gap: 0px;
+}
+
 .instagram-container{
+  grid-column: 2/3;
+  grid-row: 2/3;
   display: flex;
   justify-content: center;
 }
 
 .content h1{
   font-family: 'Roboto Slab', serif;
-  font-size: 6em;
+  font-size: 4.25em;
   /* line-height: 50px;*/
   margin: 0;
   text-align: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 
 .content p{
-  font-size: 1.75em;
+
+  /* font-size: 1em; */
   margin: 20px 0px;
-  line-height: 50px;
+  line-height: 25px;
+}
+
+.instagram-media{
+  grid-column: 2/3;
+  /* height: 100%; */
 }
 
 .column{
+  grid-column: 2/3;
   /* display: flex; */
   text-align: left;
 }
@@ -267,7 +289,7 @@ CONTENT AND LANDING PAGE HERE
 
 
 /********************************************************************************
-  Media Queries begins here
+  Media Queries begins here for laptop
 *********************************************************************************/
 
 @media only screen and (min-width: 765px) {
@@ -384,10 +406,28 @@ CONTENT AND LANDING PAGE HERE
     top: 0;
   }
 
+  .section{
+    padding: 20px 40px;
+
+    /* TODO: see if these following styles are needed. is padding enough? */
+    /* display: grid;
+    grid-template-columns: 40px 1fr 40px; */
+  }
+
+  /* TODO: merge these two */
   .content h1{
     text-align: left;
   }
 
+  .content h1{
+    font-family: 'Roboto Slab', serif;
+    font-size: 6em;
+    /* line-height: 50px;*/
+    margin: 0;
+    text-align: center;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
   /* TODO: Adjust this so it adjust better with screen size */
 
   /*
