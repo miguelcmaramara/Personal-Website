@@ -3,7 +3,7 @@
 :root {
   --headingBackground: rgba(255, 255, 255, 1);
   --transparent: rgba(0, 0, 0, 0);
-  --lightText: rgba(230, 230, 230, 1);
+  --lightText: rgba(245, 245, 245, 1);
   --hovLightText: rgba(210, 210, 210, 1);
   --darkText: rgba(20, 20, 20, 1);
   --hovDarkText: rgba(90, 90, 90, 1);
